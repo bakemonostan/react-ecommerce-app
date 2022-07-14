@@ -70,7 +70,9 @@ export const ProductsProvider = ({ children }) => {
   // pass the values you would use
   //eg <YourContext.Provider value={{...}}> as seen below
   return (
-    <ProductsContext.Provider value={{ ...state, openSidebar, closeSidebar }}>
+    <ProductsContext.Provider
+      value={{ ...state, openSidebar, closeSidebar, fetchSingleProduct }}
+    >
       {children}
     </ProductsContext.Provider>
   );
