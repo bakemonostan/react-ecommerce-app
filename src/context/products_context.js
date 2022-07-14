@@ -24,13 +24,21 @@ const ProductsContext = React.createContext();
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // create the function
+  // create the functions to open and close sidebar
   const openSidebar = () => {
     dispatch({ type: SIDEBAR_OPEN });
   };
   const closeSidebar = () => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
+
+  const fetchProducts = async (url) => {
+    const response = await axios.get(url);
+    console.log(response);
+  };
+  useEffect(() => {
+    fetchProducts(url);
+  }, []);
 
   // pass the values you would use
   //eg <YourContext.Provider value={{...}}> as seen below

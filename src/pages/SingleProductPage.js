@@ -8,7 +8,7 @@ import {
   Error,
   ProductImages,
   AddToCart,
-  Stars,
+  Stars, 
   PageHero,
 } from '../components'
 import styled from 'styled-components'
