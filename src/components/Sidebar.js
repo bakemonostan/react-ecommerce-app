@@ -24,6 +24,7 @@ const Sidebar = () => {
         </div>
         <ul className='links'>
           {links.map((link) => {
+            // destructuring from the links file before rendering
             const { id, url, text } = link;
             return (
               <li key={id}>

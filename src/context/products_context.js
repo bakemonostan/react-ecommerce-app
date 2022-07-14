@@ -17,11 +17,14 @@ const initialState = {
   isSidebarOpen: false,
 };
 
+// create your context
 const ProductsContext = React.createContext();
 
+// then create a provider function
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  // create the function
   const openSidebar = () => {
     dispatch({ type: SIDEBAR_OPEN });
   };
@@ -29,13 +32,15 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
 
+  // pass the values you would use
+  //eg <YourContext.Provider value={{...}}> as seen below
   return (
     <ProductsContext.Provider value={{ ...state, openSidebar, closeSidebar }}>
       {children}
     </ProductsContext.Provider>
   );
 };
-// make sure use
+// make sure you use (use*ContextName*) and don't forget to export
 export const useProductsContext = () => {
   return useContext(ProductsContext);
 };

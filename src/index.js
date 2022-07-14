@@ -9,6 +9,7 @@ import { UserProvider } from './context/user_context';
 import { Auth0Provider } from '@auth0/auth0-react';
 
 ReactDOM.render(
+  //don't forget to do this when using context
   <ProductsProvider>
     <App />
   </ProductsProvider>,
