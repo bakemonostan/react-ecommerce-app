@@ -62,8 +62,8 @@ const SingleProductPage = () => {
         <Link to='/products' className='btn'>
           back to Products
         </Link>
-        <div className='products-center'>
-          <ProductImages />
+        <div className='product-center'>
+          <ProductImages images={images} />
           <section className='content'>
             <h2>{name}</h2>
             <Stars />
@@ -71,7 +71,7 @@ const SingleProductPage = () => {
             <p className='desc'>{description}</p>
             <p className='info'>
               <span>Avaliable:</span>
-              {stock > 0 ? 'In stcok' : 'out of stock'}
+              {stock > 0 ? 'In stock' : 'out of stock'}
             </p>
             <p className='info'>
               <span>SKU:</span>
